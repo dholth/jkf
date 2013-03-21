@@ -22,5 +22,5 @@ def dumps(jwk):
 def fingerprint(jwk, algorithm="sha256"):
     """Return the fingerprint of the given JSON Web Key as a hashlib object."""
     h = hashlib.new(algorithm)    
-    h.update(canonicalize(dumps(jwk)))
+    h.update(dumps(normalize(jwk)))
     return h
